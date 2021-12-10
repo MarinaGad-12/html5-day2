@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shadows</title>
+    <style>
+        div {
+            background-color: #31e22b;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <canvas id="myCanvas" width="890" height="600"></canvas>
+    <script>
+        window.onload = function () {
+            var imageObj = new Image();
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            imageObj.onload = function () {
+                ctx.drawImage(imageObj, 0, 0);
+                ctx.shadowBlur = 5;
+                ctx.shadowOffsetX = 6;
+                ctx.shadowOffsetY = 6;
+                ctx.shadowColor= " #31e22b";
+                ctx.font = "40pt Comic Sans MS";
+                ctx.fillStyle = "yellow";
+                ctx.fillText("All is Well!!!", 150, 400);
+            };
+            imageObj.src = "1.jpg";
+        } 
+    </script>
+</body>
+
+</html>
